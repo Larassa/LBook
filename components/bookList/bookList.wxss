@@ -1,0 +1,61 @@
+/* components/bookList/bookList.wxss */
+.list-wrapper {
+  padding: 30rpx;
+}
+.item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30rpx;
+  box-shadow: 10rpx 5rpx 10rpx #f4f4f4;
+  padding: 20rpx;
+  border-radius: 10rpx;
+  position: relative;
+}
+.item-id {
+  margin-right: 30rpx;
+  font-weight: bold;
+}
+.img-book{
+  width: 120rpx;
+  height: 180rpx;
+  margin-right: 30rpx;
+}
+.item-title {
+  font-size: 26rpx;
+  margin-bottom: 10rpx;
+}
+.item-author, .item-digest {
+  font-size: 22rpx;
+  color: #aaa;
+}
+.item-digest {
+  margin-top: 10rpx;
+  display: -webkit-box;
+  overflow: hidden;
+  white-space: normal !important;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical
+}
+.item-comment {
+  margin-top: 10rpx;
+}
+.read-type {
+  position: absolute;
+  top: 28rpx;
+  right: 20rpx;
+  padding: 7rpx 20rpx;
+  font-size: 22rpx;
+  border-radius: 10rpx;
+  border: 1rpx solid #EBF1FA;
+  background-color: #EBF1FA;
+}
+.no-data {
+	text-align: center;
+	line-height: 100vh;
+}
+.no-data image{
+	width: 250px;
+	height: 200px;
+}

@@ -1,0 +1,24 @@
+<!--components/readBot/readBot.wxml-->
+  <van-popup 
+    show="{{ ifShowPopup }}"
+    bind:close="closePopup"
+    position="bottom"
+    custom-style="height: 40%;"
+    round
+  >
+    <view wx:if="{{readType == 0}}" class="bot-wrapper">
+      <textarea class="ipt-style"  placeholder="写下你想读的理由吧..." placeholder-class="holder-style" fixed="{{ true }}" bindinput = "iptReason1"/>
+      <view bind:tap = "recordReason" class="confirm-btn"  data-read-type="{{ readType  }}">
+        <image src="../../icon/images/send.png" />
+        <view>确定</view>
+      </view>
+    </view>
+    <view wx:else class="bot-wrapper">
+      <van-rate value="{{starValue}}" size="{{ 25 }}" class="rate-dis" bind:change = "changeStar"/>
+      <textarea class="ipt-style"  placeholder="写下你的看法吧..." placeholder-class="holder-style"  bindinput = "iptReason2"  fixed="{{ true }}"/>
+      <view bind:tap = "recordReason" class="confirm-btn" data-read-type="{{ readType == 1 ? '1' : '2' }}">
+        <image src="../../icon/images/send.png" />
+        <view>确定</view>
+      </view>
+    </view>
+  </van-popup>

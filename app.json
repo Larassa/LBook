@@ -1,0 +1,57 @@
+{
+  "pages": [
+    "pages/launch/launch",
+    "pages/index/index",
+    "pages/mine/mine",
+    "pages/book/book",
+    "pages/viewMore/viewMore",
+    "pages/bookClassify/bookClassify",
+    "pages/bookDetail/bookDetail",
+    "pages/comment/comment"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F8D273",
+    "navigationBarTitleText": "",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#6A6A6A",
+    "selectedColor": "#F8D273",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "推荐",
+        "iconPath": "/icon/tabs/home.png",
+        "selectedIconPath": "/icon/tabs/home-active.png"
+      },
+      {
+        "pagePath": "pages/book/book",
+        "text": "书馆",
+        "iconPath": "/icon/tabs/book.png",
+        "selectedIconPath": "/icon/tabs/book-active.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的",
+        "iconPath": "/icon/tabs/mine.png",
+        "selectedIconPath": "/icon/tabs/mine-active.png"
+      }
+    ]
+  },
+  "usingComponents": {
+    "van-image": "/components/vant/image/index",
+    "van-icon": "/components/vant/icon/index",
+    "van-tab": "/components/vant/tab/index",
+    "van-tabs": "/components/vant/tabs/index",
+    "van-rate": "/components/vant/rate/index",
+    "van-divider": "/components/vant/divider/index",
+    "van-popup": "/components/vant/popup/index",
+    "read-bot": "/components/readBot/readBot",
+    "book-list": "/components/bookList/bookList",
+    "van-skeleton": "/components/vant//skeleton/index"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

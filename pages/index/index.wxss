@@ -1,0 +1,115 @@
+/**index.wxss**/
+.swiper-img {
+  width: 100%;
+  height: 100%;
+}
+.new-img {
+  width: 60rpx;
+  height: 60rpx;
+}
+/*隐藏滚动条*/
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+.new-book-wrapper {
+  display: flex;
+  height: 400rpx;
+  overflow-x: scroll;
+}
+.new-book {
+  width: 260rpx;
+  font-size: 22rpx;
+  text-align: center;
+  box-sizing: border-box;
+  padding: 0 40rpx;
+}
+.new-book image {
+  width: 200rpx;
+  height: 250rpx;
+}
+.author {
+  font-size: 20rpx;
+  color: #AAAAAA;
+}
+.ellipsis{
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.van-divider {
+  padding: 0 20rpx;
+  color: #ffa300!important;
+}
+.more {
+  font-size: 20rpx;
+}
+.hot-book-wrapper {
+  padding: 0 30rpx;
+}
+.hot-book{
+  display: flex;
+  align-items: center;
+  margin-bottom: 40rpx;
+  box-shadow: 10rpx -10rpx 10px #f4f4f4;
+  /* background-image: linear-gradient(to right, #ffecd2 0%, #fcb69f 100%); */
+  border-radius: 15rpx;
+  padding: 20rpx;
+
+}
+.hot-book image {
+  width: 150rpx;
+  height: 200rpx;
+}
+.hot-book-msg {
+  margin-left: 60rpx;
+}
+.excelent-wrapper {
+  padding: 0 30rpx;
+}
+.excelent-wrapper-top {
+  font-size: 28rpx;
+  margin-bottom: 30rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.excelent-wrapper-top{
+  color: #ffa300;
+}
+.excelent {
+  /* box-shadow: 10rpx 10rpx 10px #f4f4f4; */
+  padding: 20rpx;
+  border-radius: 15rpx;
+  box-sizing: border-box;
+  /* background-color: #EBF1FA; */
+  font-size: 22rpx;
+  background-image: url('https://img3.doubanio.com/img/files/file-1575626352.png');
+}
+.excelent view:nth-child(2), .view-more {
+  font-size: 20rpx;
+  /* color: #AAAAAA; */
+  display: flex;
+  justify-content: flex-end;
+}
+.view-more {
+  align-items: center;
+  justify-content: center;
+}
+.view-more image {
+  width: 30rpx;
+  height: 30rpx;
+}
+.others-view-wrapper {
+  margin-top: 50rpx;
+}
+.others-view-wrapper-bot {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  font-size: 24rpx;
+}
+.others-img {
+  width: 180rpx;
+  height: 240rpx;
+}

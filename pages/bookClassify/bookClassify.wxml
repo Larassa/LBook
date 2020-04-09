@@ -1,0 +1,35 @@
+<!--pages/bookClassify/bookClassify.wxml-->
+<view class="bookClassify" hover-class="none" hover-stop-propagation="false">
+  <van-tabs active="{{ active }}" color="#ffa300" sticky wx:if="{{showList && type != 'collection' && type != 'comment'}}" bind:click="tabClick">
+    <van-tab title="文学艺术">
+      <book-list list="{{list}}" type="{{type}}"></book-list>
+    </van-tab>
+    <van-tab title="名著经典">
+      <book-list list="{{list1}}" type="{{type}}"></book-list>
+    </van-tab>
+    <van-tab title="青春言情">
+      <book-list list="{{list2}}" type="{{type}}"></book-list>
+    </van-tab>
+    <van-tab title="推理悬疑">
+      <book-list list="{{list3}}" type="{{type}}"></book-list>
+    </van-tab>
+    <van-tab title="影视原著">
+      <book-list list="{{list4}}" type="{{type}}"></book-list>
+    </van-tab>
+    <van-tab title="科幻武侠">
+      <book-list list="{{list5}}" type="{{type}}"></book-list>
+    </van-tab>
+    <van-tab title="励志治愈">
+      <book-list list="{{list6}}" type="{{type}}"></book-list>
+    </van-tab>
+    <van-tab title="人物传记">
+      <book-list list="{{list7}}" type="{{type}}"></book-list>
+    </van-tab>
+    <van-tab title="科学技术">
+      <book-list list="{{list8}}" type="{{type}}"></book-list>
+    </van-tab>
+  </van-tabs>
+  <view wx:if="{{showList && (type == 'collection' || type == 'comment')}}">
+    <book-list list="{{list9}}" type="{{type}}"></book-list>
+  </view>
+</view>

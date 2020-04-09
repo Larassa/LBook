@@ -1,0 +1,26 @@
+<!--components/bookList/bookList.wxml-->
+<view class="list-wrapper">
+	<view wx:if="{{list.length != 0}}">
+		<block wx:for="{{list}}" wx:key="id">
+			<view class="item" bind:tap="goBookDetail" data-id="{{item.id}}"data-type="{{item.type}}">
+				<view class="item-id" wx:if="{{type != 'collection' && type != 'comment'}}">{{item.id}}</view>
+				<view><image src="{{item.url}}" class="img-book"/></view>
+				<view style="flex-grow: 1">
+					<view class="item-title">{{item.title}}</view>
+					<view class="item-author">作者：{{item.author}}</view>
+					<view class="item-digest" wx:if="{{type != 'comment'}}">
+						<rich-text nodes="{{item.digest}}"></rich-text>
+					</view>
+					<view class="item-comment item-author" wx:if="{{type == 'comment'}}">书评：{{item.reason}}</view>
+					<view wx:if="{{item.starValue != ''}}">
+						<van-rate value="{{ item.starValue }}" size="{{ 10 }}" readonly allow-half/><text class="item-author">{{item.star}}</text>
+					</view>
+				</view>
+				<view class="read-type" wx:if="{{type == 'comment'}}">{{item.readType == 0 ? '想读': item.readType == 1 ? '在读' : '已读'}}</view>
+			</view>
+		</block>
+	</view>
+  <view wx:else class="no-data">
+		<image src="../../icon/images/empty.jpg" />
+	</view>
+</view>

@@ -1,0 +1,19 @@
+/* pages/launch/launch.wxss */
+.img-wrapper {
+	text-align: center;
+	margin-top: 40%;
+}
+.img-wrapper image {
+	width: 240rpx;
+	height: 240rpx;
+}
+.txt-wrapper {
+	text-align: center;
+}
+.txt {
+	width: 1rpx;
+	line-height: 50rpx;
+	word-wrap:break-word;
+	word-break:nomal;
+	margin: 0 auto;
+}

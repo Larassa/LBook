@@ -1,0 +1,9 @@
+<!--pages/launch/launch.wxml-->
+<view>
+	<view class="img-wrapper">
+		<image src="../../icon/images/launch.jpg"/>
+	</view>
+	<view class="txt-wrapper">
+		<view class="txt">遇见你 <view style="margin-top: 20rpx">真好</view> </view>
+	</view>
+</view>

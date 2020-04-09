@@ -1,0 +1,125 @@
+<!--index.wxml-->
+<view>
+  <!-- 轮播图 -->
+  <swiper indicator-dots="{{indicatorDots}}"
+    autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{true}}">
+    <block wx:for="{{imgList}}" wx:key="index">
+      <swiper-item>
+        <image src="{{item.url}}" mode="widthFix" class="swiper-img"/>
+      </swiper-item>
+    </block>
+  </swiper>
+
+  <!-- 新书上架 -->
+  <van-divider contentPosition="left">
+    <image src="/icon/images/new.png" class="new-img" />书上架
+  </van-divider>
+  <view class="new-book-wrapper">
+    <block wx:for="{{newBookList}}" wx:key="index">
+      <view class="new-book" bind:tap="goBookDetail" data-id="{{item.id}}" data-type="new">
+        <image class="" src="{{item.url}}"  binderror="" bindload="">
+        </image>
+        <view class="ellipsis">{{item.title}}</view>
+        <view class="author ellipsis">{{item.author}}</view>
+      </view>
+    </block>
+  </view>
+
+  <!-- 热门书籍 -->
+  <van-divider contentPosition="left">
+    <image src="/icon/images/hot.png" class="new-img" />门书籍
+  </van-divider>
+  <view class="hot-book-wrapper">
+    <block wx:for="{{hotBookList}}" wx:key="index">
+      <view class="hot-book" bind:tap="goBookDetail" data-id="{{item.id}}" data-type="hot">
+        <image class="" src="{{item.url}}"  binderror="" bindload="">
+        </image>
+        <view class="hot-book-msg">
+          <view class="ellipsis">{{item.title}}</view>
+          <van-rate value="{{ item.star }}" size="{{ 10 }}" readonly/>
+          <view class="author ellipsis">{{item.author}}</view>
+          <view class="author ellipsis">{{moduleClassify.getClassify(item.classify)}}</view>
+        </view>
+      </view>
+    </block>
+  </view>
+
+  <!-- 精彩片段 -->
+  <view class="excelent-wrapper">
+    <view class="excelent-wrapper-top">
+      精彩片段
+    </view>
+    <swiper 
+      indicator-dots="{{false}}"
+      autoplay="{{true}}"
+      interval="{{5000}}"
+      duration="{{duration}}"
+      vertical="{{true}}"
+      circular="{{true}}"
+      style="height: 150rpx;"
+    >
+      <block wx:for="{{excelentList}}" wx:key="index">
+        <swiper-item>
+          <view class="excelent">
+            <view>{{item.page}}</view>
+            <view>{{item.name}}</view>
+          </view>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+
+  <!-- 他们在看 -->
+  <view class="others-view-wrapper excelent-wrapper">
+    <view class="others-view-wrapper-top excelent-wrapper-top">
+      他们在看
+    </view>
+    <view class="others-view-wrapper-bot">
+      <block wx:for="{{othersList}}" wx:key="index">
+        <view style="margin-bottom: 20rpx;" bind:tap="goBookDetail" data-id="{{item.id}}" data-type="other">
+          <image class="others-img" src="{{item.url}}" ></image>
+          <view class="ellipsis">{{item.title}}</view>
+          <view><van-rate value="{{ item.star }}" size="{{ 10 }}" readonly/></view>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>
+<wxs module="moduleClassify">
+  var getClassify = function (data) {
+    var txt = ''
+    switch (data) {
+      case 0 :
+        txt = '文学艺术'
+        break
+      case 1:
+        txt = '名著经典'
+        break;
+      case 2:
+        txt = '青春言情'
+        break
+      case 3:
+        txt = '推理悬疑'
+        break
+      case 4:
+        txt = '影视原著'
+        break;
+      case 5:
+        txt = '科幻武侠'
+        break
+      case 6:
+        txt = '励志治愈'
+        break
+      case 7:
+        txt = '人物传记'
+        break;
+      case 8:
+        txt = '科学技术'
+        break
+    }
+    return txt
+  }
+  module.exports = {
+    getClassify: getClassify
+  }
+</wxs>

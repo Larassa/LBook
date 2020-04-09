@@ -1,0 +1,114 @@
+<!--pages/bookDetail/bookDetail.wxml-->
+<view class="book-detail-wrapper">
+<!-- 书本详情 -->
+  <view class="book-detail">
+    <image src="{{detail.url}}" class="book-img"/>
+    <view class="book">
+      <view class="title">{{detail.title}}</view>
+      <view class="author">{{detail.author}}</view>
+      <view class="book-module">
+        <van-rate value="{{detail.star}}" size="{{ 15 }}" readonly/><text class="author">{{detail.star == 0 ? '' : detail.star}}</text>
+        <view class="author margin-bot" wx:if="{{detail.commentNum != 0}}">共{{detail.commentNum}}条书评</view>
+        <view class="author margin-bot" wx:else>评价人数不足</view>
+        <view class="author">{{detail.readingNum}}人已读｜{{detail.readNum}}人在读｜{{detail.wReadNum}}人想读</view>
+        <view class="author read" wx:if="{{!ifComment}}">
+          <view class="read-btn" bind:tap="showPopup" data-read-type="0">
+            <image src="../../icon/images/wRead.png" />想读
+          </view>
+          <view class="read-btn" bind:tap="showPopup" data-read-type="1">
+            <image src="../../icon/images/readIng.png" />在读
+          </view>
+          <view class="read-btn" bind:tap="showPopup" data-read-type="2">
+            <image src="../../icon/images/read.png" />已读
+          </view>
+        </view>
+				<view class="author" wx:else class="comment-list">
+					<view>{{reason}}</view>
+				</view>
+      </view>
+    </view>
+    <image wx:if="{{!ifCollect}}" bind:tap="collect" src="../../icon/images/not-collect.png" class="collect-img"/>
+    <image wx:if="{{ifCollect}}" bind:tap="collect"  src="../../icon/images/collect.png" class="collect-img"/>
+  </view>
+<!-- 中间 -->
+  <view class="book-cell-group">
+    <view class="book-cell" hover-class="hover-bck" bind:tap="goBookClassify">
+      <view>分类</view>
+      <view>{{moduleClassify.getClassify(detail.classify)}}</view>
+      <image src="../../icon/images/arrow-right.png"></image>
+    </view>
+    <!-- <view class="book-cell" hover-class="hover-bck" bind:tap="goComment">
+      <view>书评</view>
+      <view>211条</view>
+      <image src="../../icon/images/arrow-right.png"></image>
+    </view> -->
+  </view>
+  <view class="book-brief">
+    <view class="brief-title">内容简介</view>
+    <view class="{{ moreTxt ? 'brief-more' : 'brief' }}" bind:tap="showMoreTxt">
+      <rich-text nodes="{{detail.digest}}"></rich-text>
+    </view>
+  </view>
+  <view class="book-brief">
+    <view class="brief-title">作者简介</view>
+    <view class="{{ moreAuthor ? 'brief-more' : 'brief' }}" bind:tap="showMoreAuthor">
+      {{detail.authorBrief}}
+    </view>
+  </view>
+  <!-- <view class="book-brief">
+    <view class="brief-title">看这本书的还喜欢看</view>
+    <view class="more-book-wrapper">
+      <block wx:for="{{moreBookList}}" wx:key="index">
+        <view class="more-book" bind:tap="goBookDetail">
+          <image  src="{{item.url}}"></image>
+          <view class="ellipsis">{{item.title}}</view>
+          <view class="dis-felx">
+            <van-rate value="{{ item.star }}" size="{{ 12 }}" readonly/>
+            <view class="ellipsis">{{item.star}}.0</view>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view> -->
+<!-- 底部 -->
+  <read-bot ifShowPopup="{{ifShowPopup}}" readType="{{readType}}" bind:closePopup="closePopup" bind:sendComment="sendComment"></read-bot>
+
+</view>
+<wxs module="moduleClassify">
+  var getClassify = function (data) {
+    var txt = ''
+    switch (data) {
+      case 0 :
+        txt = '文学艺术'
+        break
+      case 1:
+        txt = '名著经典'
+        break;
+      case 2:
+        txt = '青春言情'
+        break
+      case 3:
+        txt = '推理悬疑'
+        break
+      case 4:
+        txt = '影视原著'
+        break;
+      case 5:
+        txt = '科幻武侠'
+        break
+      case 6:
+        txt = '励志治愈'
+        break
+      case 7:
+        txt = '人物传记'
+        break;
+      case 8:
+        txt = '科学技术'
+        break
+    }
+    return txt
+  }
+  module.exports = {
+    getClassify: getClassify
+  }
+</wxs>

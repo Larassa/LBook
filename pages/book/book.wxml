@@ -1,0 +1,22 @@
+<!--pages/book/book.wxml-->
+<view class="book-wrapper">
+  <block wx:for="{{bookList}}" wx:key="index">
+    <van-skeleton
+      avatar
+      title
+      avatar-shape="square"
+      row="3"
+      loading="{{loading}}"
+    >
+      <view class="book" bind:tap="goBookClassify" data-index="{{index}}">
+        <image src="{{item.url}}" />
+        <view class="book-bot">
+          <view>1.{{item.book1}}</view>
+          <view>2.{{item.book2}}</view>
+          <view>3.{{item.book3}}</view>
+        </view>
+        <view class="book-classify">{{item.classify}}</view>
+      </view>
+    </van-skeleton>
+  </block>
+</view>

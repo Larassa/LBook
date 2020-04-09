@@ -1,0 +1,64 @@
+<!--pages/comment/comment.wxml-->
+<view class="container" hover-class="none" hover-stop-propagation="false">
+  <view class="comment-wrapper">
+    <view class="dis-flex">
+      <view class="user-avatar-url">
+        <open-data type="userAvatarUrl" ></open-data>
+      </view>
+      <view class="flex-rgt">
+        <open-data type="userNickName" class="nick-name"></open-data>
+        <van-rate value="{{ 3 }}" size="{{ 10 }}" readonly/><text style="margin-left: 10rpx; color: #aaa">3.0</text>
+        <view style="color: #aaa">2019年3月20日</view>
+      </view>
+    </view>
+    <view class="comment">
+      就拿手机四大开始打卡数据库的卡上就是打火机撒的那就是多久啊靠大家蛇年大吉卡上你打算拿大奖啊铯手机啊的就撒开
+    </view>
+  </view>
+  <view class="comment-wrapper">
+    <view class="dis-flex">
+      <view class="user-avatar-url">
+        <open-data type="userAvatarUrl" ></open-data>
+      </view>
+      <view class="flex-rgt">
+        <open-data type="userNickName" class="nick-name"></open-data>
+        <van-rate value="{{ 3 }}" size="{{ 10 }}" readonly/><text style="margin-left: 10rpx; color: #aaa">3.0</text>
+        <view style="color: #aaa">2019年3月20日</view>
+      </view>
+    </view>
+    <view class="comment">
+      就拿手机四大开始打卡数据库的卡上就是打火机撒的那就是多久啊靠大家蛇年大吉卡上你打算拿大奖啊铯手机啊的就撒开
+    </view>
+  </view>
+  <view class="comment-wrapper">
+    <view class="dis-flex">
+      <view class="user-avatar-url">
+        <open-data type="userAvatarUrl" ></open-data>
+      </view>
+      <view class="flex-rgt">
+        <open-data type="userNickName" class="nick-name"></open-data>
+        <van-rate value="{{ 3 }}" size="{{ 10 }}" readonly/><text style="margin-left: 10rpx; color: #aaa">3.0</text>
+        <view style="color: #aaa">2019年3月20日</view>
+      </view>
+    </view>
+    <view class="comment">
+      就拿手机四大开始打卡数据库的卡上就是打火机撒的那就是多久啊靠大家蛇年大吉卡上你打算拿大奖啊铯手机啊的就撒开
+    </view>
+  </view>
+  <view class="comment-wrapper">
+    <view class="dis-flex">
+      <view class="user-avatar-url">
+        <open-data type="userAvatarUrl" ></open-data>
+      </view>
+      <view class="flex-rgt">
+        <open-data type="userNickName" class="nick-name"></open-data>
+        <van-rate value="{{ 3 }}" size="{{ 10 }}" readonly/><text style="margin-left: 10rpx; color: #aaa">3.0</text>
+        <view style="color: #aaa">2019年3月20日</view>
+      </view>
+    </view>
+    <view class="comment">
+      就拿手机四大开始打卡数据库的卡上就是打火机撒的那就是多久啊靠大家蛇年大吉卡上你打算拿大奖啊铯手机啊的就撒开
+      就拿手机四大开始打卡数据库的卡上就是打火机撒的那就是多久啊靠大家蛇年大吉卡上你打算拿大奖啊铯手机啊的就撒开
+    </view>
+  </view>
+</view>

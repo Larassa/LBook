@@ -1,0 +1,37 @@
+/* components/readBot/readBot.wxss */
+.ipt-style {
+  width: 80%;
+  height: 200rpx;
+  background-color: #f4f4f4;
+  border-radius: 50rpx;
+  padding: 30rpx;
+  font-size: 22rpx;
+  margin: 30rpx auto;
+}
+.confirm-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40%;
+  padding: 15rpx;
+  background-color: #F8D273;
+  font-size: 22rpx;
+  border-radius: 50rpx;
+  color: #fff;
+  margin: 0 auto;
+}
+.confirm-btn image {
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 20rpx;
+}
+.holder-style {
+  font-size: 22rpx;
+}
+.bot-wrapper {
+  padding: 30rpx 40rpx;
+}
+.rate-dis {
+  display: flex;
+  justify-content: center;
+}

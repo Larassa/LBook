@@ -1,0 +1,52 @@
+<!--pages/mine/mine.wxml-->
+<view>
+  <!-- 用户登陆 -->
+  <view class="mine-login">
+    <view class="user-avatar-url">
+      <open-data type="userAvatarUrl" ></open-data>
+    </view>
+    <open-data type="userNickName"></open-data>
+  </view>
+
+  <!-- 用户操作系列 -->
+  <view class="mine-operation">
+    <van-cell-group>
+      <van-cell
+        title="我的收藏" 
+        is-link icon="like" 
+        size="large"
+        link-type="navigateTo" 
+        url="../bookClassify/bookClassify?type=collection"
+       />
+      <van-cell 
+        title="我的书评" 
+        is-link 
+        icon="smile-comment" 
+        size="large"
+        link-type="navigateTo"
+        url="../bookClassify/bookClassify?type=comment"
+      />
+      <!-- <van-cell 
+        title="我的未读" 
+        is-link icon="column" 
+        size="large"
+        link-type="navigateTo" 
+        url=""
+      />
+      <van-cell 
+        title="我的想读" 
+        is-link icon="star" 
+        size="large"
+        link-type="navigateTo" 
+        url=""
+      />
+      <van-cell 
+        title="我的已读" 
+        is-link icon="star" 
+        size="large"
+        link-type="navigateTo" 
+        url=""
+      /> -->
+    </van-cell-group>
+  </view>
+</view>
